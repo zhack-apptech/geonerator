@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geonerator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWaz3-cnwB2sCPDCE2Du--zozjqgPqneU"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div id="main-map" style="min-height: 100vh;"></div>
+        </div>
+        <div class="col-md-4">
+          <div class="main-results">
+            <label for="clientId">Client ID:</label>
+            <input name="clientId" id="clientId" type="number" value="658" class="form-control"/>
+            <label for="latitude">Default Latitude:</label>
+            <input type="text" class="latitude form-control" id="latitude" value=""/>
+            <label for="longitude">Default Longitude:</label>
+            <input type="text" class="longitude form-control" id="longitude" value="" />
+            <br />
+            <label for="eventDesc"></label>
+            <div id="eventDescription" class="radio-inline">
+              <input name="eventDesc" type="radio" data="5" checked="checked" text="SURVEY_RESPONSE">SURVEY_RESPONSE</input><br>
+              <input name="eventDesc" type="radio" data="6" text="GET_SURVEY">GET_SURVEY</input><br>
+              <input name="eventDesc" type="radio" data="7" text="ORG_BRANCH_HIT">ORG_BRANCH_HIT</input><br>
+              <input name="eventDesc" type="radio" data="8" text="PANIC_BUTTON_TRAIL">PANIC_BUTTON_TRAIL</input><br>
+              <input name="eventDesc" type="radio" data="9" text="MOBILE_USER_LOGIN">MOBILE_USER_LOGIN</input><br>
+              <input name="eventDesc" type="radio" data="10" text="100M_DISTANCE">100M_DISTANCE</input><br>
+              <input name="eventDesc" type="radio" data="11" text="4AM_TO_12PM_LOC">4AM_TO_12PM_LOC</input><br>
+              <input name="eventDesc" type="radio" data="12" text="12PM_TO_8PM_LOC">12PM_TO_8PM_LOC</input><br>
+              <input name="eventDesc" type="radio" data="13" text="8PM_TO_4AM_LOC">8PM_TO_4AM_LOC</input><br>
+            </div>
+            <br>
+            <textarea id="results" class="form-control" cols="10" rows="10" onclick="copyToClipboard(this)"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<script src="map.js"></script>
+<script>
+  initMap();
+</script>
+</body>
+</html>
